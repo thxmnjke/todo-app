@@ -1,10 +1,11 @@
-import './App.css'
+import { TodosLst } from "./components/TodosList"
+
 
 function App() {
   
   return (
     <>
-      TODO
+      <TodosLst></TodosLst>
     </>
   )
 }
