@@ -1,6 +1,7 @@
 import {  useState } from "react";
-import { TaskList } from "./TaskList";
+import { TaskList } from "../TaskList/TaskList";
 import { CirclePlus } from "lucide-react";
+import { Button } from "../Button/Button";
 
 type todosProps = {
     value: string
@@ -24,8 +25,6 @@ export function TodosLst() {
     function keyDownHandler(e: React.KeyboardEvent<HTMLElement>) {
         if(e.code === 'Enter') {
             addTodos()
-        } else {
-            return
         }
     }    
 
@@ -35,7 +34,7 @@ export function TodosLst() {
                                 rounded-3xl border border-[#000000]">   
                     <h2 className="text-black mt-3.5 ml-11 text-4xl font-bold">Today</h2>
                     <div className="relative">
-                        <button onClick={addTodos}><CirclePlus className="absolute left-12.5 top-7.5 size-6"/></button>
+                        <Button onClick={addTodos}><CirclePlus className="absolute left-12.5 top-7.5 size-6"/></Button>
                         <input type="text" name="text" value={text} onKeyDown={keyDownHandler} onChange={(e) => {setText(e.target.value)}} placeholder="Add new task" 
                             className="rounded-2xl border border-[#000000] mt-5 ml-11
                                         h-11 w-3xl px-9.5" 

@@ -1,4 +1,4 @@
-import { TodosLst } from "./components/TodosList"
+import { TodosLst } from "./components/TodosList/TodosList"
 
 
 function App() {
