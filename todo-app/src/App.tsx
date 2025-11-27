@@ -1,11 +1,11 @@
-import { TodosLst } from "./components/TodosList/TodosList"
+import { TodoList } from "./components/TodoList/TodoList"
 
 
 function App() {
   
   return (
     <>
-      <TodosLst></TodosLst>
+      <TodoList />
     </>
   )
 }

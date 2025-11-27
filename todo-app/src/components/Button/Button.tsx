@@ -6,5 +6,5 @@ interface Props {
 }
 
 export function Button({ children, onClick }: Props) {
-    return <div onClick={onClick}>{ children }</div>
+    return <button onClick={onClick}>{ children }</button>
 }
