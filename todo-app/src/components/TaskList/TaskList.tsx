@@ -8,7 +8,7 @@ interface Props {
 
 export function TaskList({ value, id }: Props) {
     return (
-        <ul className="w-3xl ml-11">
+        <ul className="w-3xl ml-8">
             <TodoItem  value={value} id={id}/>
         </ul>
    )

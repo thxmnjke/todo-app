@@ -22,10 +22,10 @@ export function TodoItem({ value, id }: Props) {
         <>
             <div className="flex items-center gap-3 py-2.5 border-b pl-2.5 text-sm opacity-70 relative">
                 <input type="checkbox" checked={isChecked} onChange={handleCheacked} className="cursor-pointer"/>
-                <span className={cn(isChecked && 'line-through decoration-skip-ink-none', "leading-none decoration-1 decoration-slate-900 decoration-solid")}>
+                <span className={cn(isChecked && 'line-through decoration-skip-ink-none', " decoration-1 decoration-slate-900 decoration-solid")}>
                     { value } 
                 </span>
-                <Button onClick={() => {removeTodo(id)}}><Trash className="absolute left-185 top-2 size-5"/></Button>
+                <Button onClick={() => {removeTodo(id)}}><Trash className="absolute left-185 top-3 size-5"/></Button>
             </div>
         </>
     )
