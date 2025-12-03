@@ -1,32 +1,16 @@
-import {  useState } from "react";
 import { TaskList } from "../TaskList/TaskList";
 import { CirclePlus } from "lucide-react";
 import { Button } from "../Button/Button";
-import { TodoContext } from "../../context/TodoContext";
+import { useTodoListStore } from '../../store/todo-list-store'
 
 export type todosProps = {
     value: string
 }
 
 export function TodoList() {
-    const [text, setText] = useState('')
-    const [todos, setTodos] = useState<todosProps[]>([])
-
-    function removeTodo(index: number) {
-        todos.splice(index, 1)
-        setTodos([...todos])
-    }
-    //вот тут кароче need help чучуть в плане что так можно или нет 
-    // ибо без "| undefined"  он просит этот аргумент а мне то он там не нужен
-    function addTodos(e?: React.FormEvent<HTMLFormElement> | undefined) { 
-        e?.preventDefault()
-        if(text.length === 0) return
-        setTodos([...todos, { value:text }])
-        setText('')
-    }   
+    const { text, todos, setText, addTodos } = useTodoListStore()  
 
     return (
-            <TodoContext.Provider value={{removeTodo}}>
                 <div className="min-h-screen flex items-center">
                     <div className="my-0 mx-auto bg-white h-173 w-209 overflow-x-hidden overflow-y-auto
                                     rounded-3xl border border-[#000000]">   
@@ -48,6 +32,5 @@ export function TodoList() {
                         </ul> 
                     </div>
                 </div>
-            </TodoContext.Provider>
     )
 }
