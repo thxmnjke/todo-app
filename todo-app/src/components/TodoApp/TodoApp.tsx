@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FormInput } from "../FormInput/FormInput";
-import { TaskList } from "../TaskList/TaskList";
+import { TodoList } from "../TodoList/TodoList";
 
 export type todosProps = {
     value: string
@@ -18,7 +18,7 @@ export function TodoApp() {
                 <h2 className="text-black mt-3.5 ml-8 text-4xl font-semi font-['Oswald']">Today</h2>
                 <FormInput text={text} todos={todos} setTodos={setTodos} setText={setText}/>
                 <div className="overflow-y-auto max-h-142">
-                    <TaskList todos={todos} setTodos={setTodos} value={text}/>
+                    <TodoList todos={todos} setTodos={setTodos} value={text}/>
                 </div>
             </div>
         </div>

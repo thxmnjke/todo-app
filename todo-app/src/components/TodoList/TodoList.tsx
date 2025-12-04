@@ -8,7 +8,7 @@ interface Props {
     setTodos: React.Dispatch<React.SetStateAction<todosProps[]>>
 }
 
-export function TaskList({ todos, setTodos }: Props) {
+export function TodoList({ todos, setTodos }: Props) {
     return (
         <ul className="w-3xl ml-8">
             {todos.map((t) => {

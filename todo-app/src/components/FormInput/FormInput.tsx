@@ -12,8 +12,7 @@ interface Props {
 
 export function FormInput({text, setText, todos, setTodos}: Props) {
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    function addTodos(e?: any) { 
+    function addTodos(e: React.FormEvent<HTMLFormElement>) { 
         e.preventDefault()
         if(text.length === 0) return
         setTodos([...todos, { value:text, index: uuidv4() }])
